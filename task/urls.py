@@ -1,25 +1,21 @@
-from django.conf.urls import patterns, include, url
+"""task URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
 from django.contrib import admin
-import usermgmt
-from usermgmt import views
+from django.urls import path
 
-admin.autodiscover()
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'task.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'home', views.home, name='home'),
-    url(r'index', views.index, name='index'),
-    url(r'addsuccess', views.addsuccess, name='addsuccess'),
-    url(r'usermod', views.usermod, name='usermod'),
-    url(r'modifyuser', views.modifyuser, name='modifyuser'),
-    url(r'userdel', views.userdel, name='userdel'),
-    url(r'deleteduser', views.deleteduser, name='deleteduser'),
-    url(r'usergrant', views.usergrant, name='usergrant'),
-    url(r'grantusersucc', views.grantusersucc, name='grantusersucc'),
-    url(r'register', views.register, name='register'),
-    url(r'login', views.user_login, name='login'),
-    url(r'logout', views.user_logout, name='logout'),
-
-)
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
