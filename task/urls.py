@@ -15,7 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from usermgmt import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path(r'index', views.index, name='index'),
+    path(r'addsuccess', views.addsuccess, name='addsuccess'),
+    path(r'usermod', views.usermod, name='usermod'),
+    path(r'modifyuser', views.modifyuser, name='modifyuser'),
+    path(r'userdel', views.userdel, name='userdel'),
+    path(r'deleteduser', views.deleteduser, name='deleteduser'),
+    path(r'usergrant', views.usergrant, name='usergrant'),
+    path(r'grantusersucc', views.grantusersucc, name='grantusersucc'),
+    path(r'register', views.register, name='register'),
+    path(r'login', views.user_login, name='login'),
+    path(r'logout', views.user_logout, name='logout'),
 ]
