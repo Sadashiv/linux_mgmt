@@ -23,20 +23,17 @@ else
     wget -c $DOWNLOAD_PREFIX/$PYTHON.tar.xz --no-check-certificate 1>$LOGNAME 2>>$LOGNAME
     echo "Completed Downloading the $PYTHON"
     echo "*********************************************"
-    cd ..
 fi
 
 #Check the python already exists
 VALIDATE_PY_PATH=$PREFIX/$PY_PATH
 if [ -f $VALIDATE_PY_PATH ];
 then
-    cd $DOWNLOADDIR
     echo "*********************************************"
     echo "Python3 already installed in path ---->"
     echo "$PREFIX/bin/python3"
     echo "*********************************************"
 else
-    cd $DOWNLOADDIR
     echo "*********************************************"
     echo "Installing the python-version : $VERSION"
     tar xf $PYTHON.tar.xz
@@ -44,6 +41,7 @@ else
     ./configure --prefix=$PREFIX --enable-unicode=ucs4 1>>$LOGNAME 2>>$LOGNAME
     make 1>$LOGNAME
     make install 1>$LOGNAME
+    cd ..
     echo "Completed installation for python: $VERSION"
     echo "*********************************************"
 fi
