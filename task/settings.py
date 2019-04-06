@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9aj35q!@8=8gllzdb23q$*%)59je&=0%k-c3sjlw=#7a!ivuw#'
+SECRET_KEY = '3#t(q@(h5sif1(4gb91#j=*16yh&1%ryt2)i69@&ud=6donq%$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -52,13 +52,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'task.urls'
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         #'DIRS': [],
-        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,7 +119,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-
 STATIC_URL = '/static/'
 
 #STATICFILES_DIRS = (
@@ -131,10 +128,9 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_URL='/usermgmt/login'
+LOGIN_URL='login'
 
 REGISTRATION_OPEN = True # If true user can register
 ACCOUNT_ACTIVATION_DAYS = 7 # One week activation windows
 REGISTRATION_AUTO_LOGIN = True # If True the user will be automatically logged in
 LOGIN_REDIRECT_URL = '/index'
-

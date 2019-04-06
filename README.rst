@@ -12,6 +12,10 @@ Step 1 : clone git repo either of way you feel compfort:::
 step 2 : cd usermgmt::
          Install customized python
          $ ./installpy.sh -s
+
+         Error: zipimport.ZipImportError: can't decompress data; zlib not available
+         RHEL/CentOS: yum install gcc gcc-c++ zlib zlib-devel libffi-devel
+         UBUNTU: apt-get install gcc gcc-c+ libncursesw5-dev libgdbm-dev libc6-dev libsqlite3-dev tk-dev libssl-dev openssl zlib zlib1g-dev libffi-dev
          Once above command execution success
          check python installed in the current working directory
          $ ./usr/bin/python
@@ -42,9 +46,7 @@ step 5 : Run the server in development mode::
 If above step is not going to work for you::
 
 However please install python=2.7.9 and Django=1.7.5.
-By pip install, easy_install or virtualenv your wish.
-
-Once installation done please perform step no 4 and 5 Again.
 
 ============================================================================================================================
-
+Once installation done please perform step no 4 and 5 Again.
+============================================================================================================================

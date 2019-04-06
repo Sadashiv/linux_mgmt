@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import usermgmt
 from usermgmt import views
 
+#admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path(r'home', views.home, name='home'),
     path(r'index', views.index, name='index'),
     path(r'addsuccess', views.addsuccess, name='addsuccess'),
     path(r'usermod', views.usermod, name='usermod'),
@@ -31,4 +33,5 @@ urlpatterns = [
     path(r'register', views.register, name='register'),
     path(r'login', views.user_login, name='login'),
     path(r'logout', views.user_logout, name='logout'),
+
 ]
