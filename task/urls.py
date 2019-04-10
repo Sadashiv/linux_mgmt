@@ -21,6 +21,7 @@ from usermgmt import views
 #admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'', views.home, name='home'),
     path(r'home', views.home, name='home'),
     path(r'index', views.index, name='index'),
     path(r'addsuccess', views.addsuccess, name='addsuccess'),
